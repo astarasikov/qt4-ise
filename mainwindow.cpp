@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
 #define FMT(X) {X, #X}
     struct {
         QImage::Format fmt;
-        char *name;
+        const char *name;
     } formats[] = {
         FMT(QImage::Format_ARGB32),
         FMT(QImage::Format_RGB16),
@@ -59,8 +59,6 @@ void MainWindow::loadImage(void) {
     mFileName = QFileDialog::getOpenFileName(
                 NULL, trUtf8("Load a binary"),
                 QDir::homePath(), "*");
-
-    ui->filePathLabel->setText(mFileName);
 }
 
 void MainWindow::on_fireButton_clicked()

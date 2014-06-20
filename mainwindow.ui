@@ -10,114 +10,90 @@
     <height>422</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="filePathLabel">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>571</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="widthBox">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>30</y>
-      <width>61</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="maximum">
-     <number>8192</number>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="heightBox">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>30</y>
-      <width>61</width>
-      <height>22</height>
-     </rect>
-    </property>
-    <property name="maximum">
-     <number>8192</number>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="fireButton">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>181</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Go Go Big Red Fire Engine</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="formatCombo">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>30</y>
-      <width>201</width>
-      <height>23</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="thePicture">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>70</y>
-      <width>521</width>
-      <height>271</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="offsetLabel">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>30</y>
-      <width>60</width>
-      <height>15</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>offset</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="offsetLine">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>30</y>
-      <width>113</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-    <property name="maxLength">
-     <number>8</number>
-    </property>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" name="controls">
+        <item>
+         <widget class="QLabel" name="fmtLabel">
+          <property name="text">
+           <string>Format</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="formatCombo"/>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="widthBox">
+          <property name="maximum">
+           <number>8192</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="heightBox">
+          <property name="maximum">
+           <number>8192</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="offsetLabel">
+          <property name="text">
+           <string>offset</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="offsetLine">
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="maxLength">
+           <number>8</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="fireButton">
+          <property name="text">
+           <string>Display Image</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="thePicture">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Output Image will be here</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -125,7 +101,7 @@
      <x>0</x>
      <y>0</y>
      <width>744</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
